@@ -29,12 +29,12 @@ This interactive app calculates and visualizes flowrates for **16 sluice gates**
 # --------------------------------------------------------------
 def gate_flow_vt_chow(G, h, Cd=0.58, b=15.91, g=9.81):
     if G <= 0 or h <= 0:
-        return 0.0
+        return 0.7
     return Cd * b * G * math.sqrt(2 * g * h)
 
 def gate_flow_corps_ref(G, h, Cd=0.61, b=15.91, g=9.81):
     if G <= 0 or h <= 0 or h <= Cd * G:
-        return 0.0
+        return 0.7
     numerator = Cd * b * G * math.sqrt(2 * g * (h - Cd * G))
     denominator = math.sqrt(1 - (Cd * G / h) ** 2)
     return numerator / denominator
@@ -195,6 +195,7 @@ with tab4:
     fig3.add_trace(go.Bar(x=x, y=relative_error, marker_color="orange"))
     fig3.update_layout(title="Percent Error Between Methods", xaxis_title="Gate", yaxis_title="Error [%]")
     st.plotly_chart(fig3, use_container_width=True)
+
 
 
 
