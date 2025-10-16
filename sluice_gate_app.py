@@ -180,7 +180,7 @@ with tab4:
     fig1.add_trace(go.Bar(x=x, y=openings, name="Gate Opening [m]", marker_color="lightblue"))
     fig1.add_trace(go.Bar(x=x, y=water_depth, name="Water Depth [m]", marker_color="darkblue"))
     fig1.update_layout(title="Gate Opening vs. Water Depth", xaxis_title="Gate Number",
-                       yaxis_title="Height [m]", barmode="group")
+                       yaxis_title="Height [m]", barmode="group", xaxis=dict(dtick=1))
     st.plotly_chart(fig1, use_container_width=True)
 
     # Graph 2
@@ -195,6 +195,7 @@ with tab4:
     fig3.add_trace(go.Bar(x=x, y=relative_error, marker_color="orange"))
     fig3.update_layout(title="Percent Error Between Methods", xaxis_title="Gate", yaxis_title="Error [%]")
     st.plotly_chart(fig3, use_container_width=True)
+
 
 
 
