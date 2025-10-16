@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 """
-Sluice Gate Flow Calculator – Final Professional Version
-Author: [Your Name]
+Sluice Gate Flow Calculator – Version 00
+Author: Taeksang Kim 
+Date: 10/15/2025
 """
 
 import streamlit as st
@@ -194,3 +195,4 @@ with tab4:
     fig3.add_trace(go.Bar(x=x, y=relative_error, marker_color="orange"))
     fig3.update_layout(title="Percent Error Between Methods", xaxis_title="Gate", yaxis_title="Error [%]")
     st.plotly_chart(fig3, use_container_width=True)
+
