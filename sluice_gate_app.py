@@ -130,7 +130,7 @@ with tab2:
     st.subheader("Gate Opening Heights [m]")
     openings = []
     for i in range(1, 17):
-        G = st.number_input(f"Gate {i}", min_value=0.0, step=0.001, key=f"gate{i}")
+        G = st.number_input(f"Gate {i}", min_value=0.0, step=0.001, format="%.3f", key=f"gate{i}")
         openings.append(G)
 
     st.info("🔹 Gates 1–8 correspond to **Canadian Gates**, and 9–16 correspond to **American Gates**.")
@@ -195,5 +195,6 @@ with tab4:
     fig3.add_trace(go.Bar(x=x, y=relative_error, marker_color="orange"))
     fig3.update_layout(title="Percent Error Between Methods", xaxis_title="Gate", yaxis_title="Error [%]")
     st.plotly_chart(fig3, use_container_width=True)
+
 
 
