@@ -54,7 +54,7 @@ tab1, tab2, tab3, tab4 = st.tabs([
 # --------------------------------------------------------------
 with tab1:
     st.header("📘 Theoretical Background")
-    st.image("A_schematic_diagram_in_light_blue_and_black_colors.png",
+    st.image("A_schematic_diagram.png",
              caption="Figure 1. Definition sketch of sluice gate parameters",
              use_container_width=True)
 
@@ -195,4 +195,5 @@ with tab4:
     fig3.add_trace(go.Bar(x=x, y=relative_error, marker_color="orange"))
     fig3.update_layout(title="Percent Error Between Methods", xaxis_title="Gate", yaxis_title="Error [%]")
     st.plotly_chart(fig3, use_container_width=True)
+
 
